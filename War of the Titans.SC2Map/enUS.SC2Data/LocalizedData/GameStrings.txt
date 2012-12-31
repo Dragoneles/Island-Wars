@@ -1,0 +1,126 @@
+Abil/Name/HeroInventory=Hero Inventory
+Abil/Name/LearnAbilityFeritus=Learn Ability
+Abil/Name/LearnAbilityZolten=Learn Ability
+Abil/Name/QuickStrike=Quick Strike
+Behavior/Name/Armor=Armor
+Behavior/Name/AttackRange=Attack Range
+Behavior/Name/AttackRange2=Attack Range
+Behavior/Name/AttackSpeed=Attack Speed
+Behavior/Name/AttackSpeed2=Attack Speed
+Behavior/Name/Damage=Damage
+Behavior/Name/Damage2=Damage
+Behavior/Name/DetectionRadius=Detection Radius
+Behavior/Name/DetectionRadius2=Detection Radius
+Behavior/Name/Energy=Energy
+Behavior/Name/Energy2=Energy
+Behavior/Name/EnergyRegeneration=Energy Regeneration
+Behavior/Name/EnergyRegeneration2=Energy Regeneration
+Behavior/Name/FeritusAttributes=Feritus Attributes
+Behavior/Name/FeritusLevels=Feritus Levels
+Behavior/Name/HealingPotion=Healing Potion
+Behavior/Name/Life=Life
+Behavior/Name/Life2=Life
+Behavior/Name/LifeRegeneration=Life Regeneration
+Behavior/Name/LifeRegeneration2=Life Regeneration
+Behavior/Name/Lifesteal=Lifesteal
+Behavior/Name/Lifesteal2=Lifesteal
+Behavior/Name/MovementSpeed=Movement Speed
+Behavior/Name/MovementSpeed2=Movement Speed
+Behavior/Name/PhysicalArmor=Physical Armor
+Behavior/Name/PhysicalArmor2=Physical Armor
+Behavior/Name/QuickStrike=Quick Strike
+Behavior/Name/QuickStrikeScaling=Quick Strike Scaling
+Behavior/Name/Shields=Shields
+Behavior/Name/Shields2=Shields
+Behavior/Name/ShieldsRegeneration=Shields Regeneration
+Behavior/Name/ShieldsRegeneration2=Shields Regeneration
+Behavior/Name/SightRange=Sight Range
+Behavior/Name/SightRange2=Sight Range
+Behavior/Name/Skirmisher=Skirmisher
+Behavior/Name/Skirmisher2=Skirmisher
+Behavior/Name/SpellResistance=Spell Resistance
+Behavior/Name/SpellResistance2=Spell Resistance
+Behavior/Name/SpellResistance3=Spell Resistance
+Behavior/Name/SpellStrength=Spell Strength
+Behavior/Name/SpellStrength2=Spell Strength
+Behavior/Name/Timescale=Timescale
+Behavior/Name/Timescale2=Timescale
+Behavior/Name/ZoltenAttributes=Zolten Attributes
+Behavior/Name/ZoltenLevels=Zolten Levels
+Behavior/Tooltip/Skirmisher=<s val="Tooltip">Each time Zolten attacks, he gains <s val="TooltipValue"><d ref="Behavior,Skirmisher,Modification[0].MoveSpeedBonus[0]" precision="1"/></s>movement speed up to <s val="TooltipValue"><d ref="Behavior,Skirmisher,MaxStackCount[0]"/></s> times.</s>
+Button/Name/HealingPotion=Healing Potion
+Button/Name/InventoryEmptyFace=Inventory Empty Face
+Button/Name/LearnQuickStrike=Learn Quick Strike
+Button/Name/LearnShockwave=Learn Shockwave
+Button/Name/QuickStrike=Quick Strike
+Button/Name/QuickStrikePlaceholder=Quick Strike Placeholder
+Button/Name/Shockwave=Shockwave
+Button/Name/SkillUp=Skill Up
+Button/Name/Skirmisher=Skirmisher
+Button/Tooltip/HealingPotion=<s val="Tooltip">Restores <s val="TooltipValue"><d ref="Behavior,HealingPotion,Duration[0]*Behavior,HealingPotion,Modification[0].VitalRegenArray[Life]"/></s> life over <s val="TooltipValue"><d ref="Behavior,HealingPotion,Duration[0]"/></s> seconds.</s>
+Button/Tooltip/InventoryEmptyFace=<s val="Tooltip">(Inventory)</s>
+Button/Tooltip/LearnQuickStrike=<s val="Tooltip">Improve Quick Strike<n/><n/>Teleport to the target unit and deal damage in a small area.</s>
+Button/Tooltip/LearnShockwave=<s val="Tooltip">Improve Quick Strike<n/><n/>Teleport to the target unit and deal damage in a small area.</s>
+Button/Tooltip/QuickStrike=<s val="Tooltip">Teleport to the target unit and perform a powerful strike that deals <s val="TooltipValue"><d ref="Effect,QuickStrikeDamage1,Amount[0]+Effect,QuickStrikeScalingDamage,Amount[0]"/></s> damage in a radius of <s val="TooltipValue"><d ref="Effect,QuickStrikeRadius1,AreaArray[0].Radius[0]"/></s>.</s>
+Button/Tooltip/QuickStrikeLevel2=<s val="Tooltip">Teleport to the target unit and perform a powerful strike that deals <s val="TooltipValue"><d ref="Effect,QuickStrikeDamage12,Amount[0]<n/>+Effect,QuickStrikeScalingDamage,Amount[0]"/></s> damage in a radius of <s val="TooltipValue"><d ref="Effect,QuickStrikeRadius12,AreaArray[0].Radius[0]"/></s>.</s>
+Button/Tooltip/QuickStrikeLevel3=<s val="Tooltip">Teleport to the target unit and perform a powerful strike that deals <s val="TooltipValue"><d ref="Effect,QuickStrikeDamage122,Amount[0]+Effect,QuickStrikeScalingDamage,Amount[0]"/></s> damage in a radius of <s val="TooltipValue"><d ref="Effect,QuickStrikeRadius122,AreaArray[0].Radius[0]"/></s>.</s>
+Button/Tooltip/QuickStrikeLevel4=<s val="Tooltip">Teleport to the target unit and perform a powerful strike that deals <s val="TooltipValue"><d ref="Effect,QuickStrikeDamage1222,Amount[0]+Effect,QuickStrikeScalingDamage,Amount[0]"/></s> damage in a radius of <s val="TooltipValue"><d ref="Effect,QuickStrikeRadius1222,AreaArray[0].Radius[0]"/></s>.</s>
+Button/Tooltip/QuickStrikePlaceholder=<s val="Tooltip">Teleport to the target unit and perform a powerful strike that deals  damage in a small radius.</s>
+Button/Tooltip/Shockwave=<s val="Tooltip">Teleport to the target unit and perform a powerful strike that deals <s val="TooltipValue"><d ref="Effect,QuickStrikeDamage1,Amount[0]+Effect,QuickStrikeScalingDamage,Amount[0]"/></s> damage in a radius of <s val="TooltipValue"><d ref="Effect,QuickStrikeRadius1,AreaArray[0].Radius[0]"/></s>.</s>
+DocInfo/DescLong=
+DocInfo/DescShort=2 even teams of 3-6 players
+DocInfo/Name=Aeternia Unbound
+DocInfo/Website=
+Improve Quick Strike1 Tooltip=Increases the damage of Quick Strike by <d ref="(Effect,QuickStrikeDamageScaling2,PeriodCount[0]*Effect,QuickStrikeDamage2,Amount[0])-(Effect,QuickStrikeDamage1,Amount[0]*Effect,QuickStrikeDamageScaling1,PeriodCount[0])"/>.
+Improve Quick Strike2 Tooltip=Increases the damage of Quick Strike by <d ref="(Effect,QuickStrikeDamageScaling3,PeriodCount[0]*Effect,QuickStrikeDamage3,Amount[0])-(Effect,QuickStrikeDamage2,Amount[0]*Effect,QuickStrikeDamageScaling2,PeriodCount[0])"/>.
+Improve Quick Strike3 Tooltip=Increases the damage of Quick Strike by <d ref="(Effect,QuickStrikeDamageScaling4,PeriodCount[0]*Effect,QuickStrikeDamage4,Amount[0])-(Effect,QuickStrikeDamage3,Amount[0]*Effect,QuickStrikeDamageScaling3,PeriodCount[0])"/>.
+ImproveQuickStrike1=Improve Quick Strike
+ImproveQuickStrike1ImproveQuickStrike21ImproveQuickStrike1ImproveShockwave1=Improve Quick Strike
+ImproveQuickStrike2ImproveShockwave=Improve Quick Strike
+ImproveQuickStrike3=Improve Quick Strike
+ImproveQuickStrike3ImproveQuickStrike23ImproveQuickStrike3ImproveShockwave3=Improve Quick Strike
+ItemClass/Name/Consumable=Consumable
+ItemClass/Name/Item=Item
+MapInfo/Player00/Name=Neutral
+MapInfo/Player01/Name=Player 1
+MapInfo/Player02/Name=Player 2
+MapInfo/Player03/Name=Player 3
+MapInfo/Player04/Name=Player 4
+MapInfo/Player05/Name=Player 5
+MapInfo/Player06/Name=Player 6
+MapInfo/Player07/Name=Player 7
+MapInfo/Player08/Name=Player 8
+MapInfo/Player09/Name=Player 9
+MapInfo/Player10/Name=Player 10
+MapInfo/Player11/Name=Player 11
+MapInfo/Player12/Name=Player 12
+MapInfo/Player13/Name=White Team
+MapInfo/Player14/Name=Black Team
+MapInfo/Player15/Name=Hostile
+Param/Value/1BE82936=<s val="Tooltip"><c val="800000">Life</c> - </s>
+Param/Value/FBFE7C6E=<s val="Tooltip"><c val="000080">Mana</c> - </s>
+Quick Strike Learn Button Name=Learn Quick Strike
+Quick Strike Level Button=Improve Quick Strike
+QuickStrikeLvlButton1=Quick Strike Rank 2
+QuickStrikeLvlButton1/Tooltip=Improve the damage of Quick Strike by <d ref="Effect,QuickStrikeDamage12,Amount[0]-Effect,QuickStrikeDamage1,Amount[0]"/>.
+QuickStrikeLvlButton1QuickStrike2LvlButton1QuickStrikeLvlButton1ShockwaveLvlButton1=Quick Strike Rank 2
+QuickStrikeLvlButton2=Quick Strike Rank 3
+QuickStrikeLvlButton2/Tooltip=Improve the damage of Quick Strike by <d ref="Effect,QuickStrikeDamage122,Amount[0]-Effect,QuickStrikeDamage12,Amount[0]"/>.
+QuickStrikeLvlButton2QuickStrike2LvlButton2QuickStrikeLvlButton2ShockwaveLvlButton2=Quick Strike Rank 3
+QuickStrikeLvlButton3=Quick Strike Rank 4
+QuickStrikeLvlButton3/Tooltip=Improve the damage of Quick Strike by <d ref="Effect,QuickStrikeDamage1222,Amount[0]-Effect,QuickStrikeDamage122,Amount[0]"/>.
+QuickStrikeLvlButton3QuickStrike2LvlButton3QuickStrikeLvlButton3ShockwaveLvlButton3=Quick Strike Rank 4
+UI/ResourceName0=<s val="TooltipValue">Gold</s>
+UI/ResourceName1=<s val="TooltipValue"><c val="808000">Lumber</c></s>
+Unit/Category/Creep=Creep
+Unit/LifeArmorName/Armor=<s val="Tooltip">Armor</s>
+Unit/Name/FeritusTitanofSavagery=Feritus, Titan of Savagery
+Unit/Name/MeleeCreep=Melee Creep
+Unit/Name/ZoltenTitanofBlades=Zolten, Titan of Blades
+Unit/ShieldArmorName/Spell Resistance=<s val="Tooltip">Spell Resistance</s>
+UnitKillRank/FeritusTitanofSavagery=Nightmare
+UnitKillRank/ZoltenTitanofBlades=Dark Prelate
+Upgrade/Name/DiminishArmor=Diminish Armor
+Weapon/Name/MeleeCreepWeapon=Melee Creep Weapon
+Weapon/Name/TitanicClaws=Titanic Claws
+Weapon/Name/TitanicEnergyBlade=Titanic Energy Blade

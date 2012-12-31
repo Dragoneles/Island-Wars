@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CGameUI id="Dflt">
+        <WorldConsoleBottom value="0"/>
+        <MinimapData>
+            <InnerBorderColor value="255,128,128,128"/>
+            <FrustumColor value="255,192,192,192"/>
+            <SelectedUnitColor value="255,255,255,255"/>
+            <ResourceUnitColor value="255,255,255,128"/>
+            <BackGroundColor value="255,0,0,45"/>
+            <BorderSize value="3.000000"/>
+        </MinimapData>
+        <DefaultPathColor index="World" value="255,0,128,255"/>
+        <DefaultPathColor index="Minimap" value="255,0,128,255"/>
+        <DefaultPathTexture index="World" value="Assets\Textures\ui_button_sortlistarrow_down.dds"/>
+        <DefaultPathTexture index="Minimap" value="Assets\Textures\ui_button_sortlistarrow_down.dds"/>
+        <ResourceArray index="Minerals" Icon="BTNChestOfGold.dds"/>
+        <ResourceArray index="Vespene" Icon="BTNHumanLumberUpgrade1.dds"/>
+    </CGameUI>
+</Catalog>

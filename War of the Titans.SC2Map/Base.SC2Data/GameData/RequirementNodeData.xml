@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CRequirementCountAbil id="CountAbilLearnAbilityZoltenCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="LearnAbilityZolten" State="CompleteOnly"/>
+    </CRequirementCountAbil>
+    <CRequirementCountAbil id="CountAbilQuickStrikeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="QuickStrike1" State="CompleteOnly"/>
+    </CRequirementCountAbil>
+    <CRequirementGTE id="GTE1CountAbilLearnAbilityZoltenCompleteOnly">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="1"/>
+        <OperandArray index="1" value="CountAbilLearnAbilityZoltenCompleteOnly"/>
+    </CRequirementGTE>
+    <CRequirementLT id="LTCountAbilQuickStrikeCompleteOnly1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountAbilQuickStrikeCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementLT>
+    <CRequirementCountUpgrade id="UpgradeZergling2CompleteOnly">
+        <Count Link="MeleeCreep"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeZergling2QueuedOrBetter">
+        <Count Link="MeleeCreep"/>
+    </CRequirementCountUpgrade>
+</Catalog>

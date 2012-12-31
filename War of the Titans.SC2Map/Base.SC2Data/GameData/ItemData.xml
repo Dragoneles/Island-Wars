@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CItemEffectInstant id="HealingPotion" parent="POTION">
+        <Flags index="CanDrop" value="0"/>
+        <Flags index="KillWhenDepleted" value="1"/>
+        <Class value="Scroll"/>
+        <Effect value="HealingPotion"/>
+        <EffectCost>
+            <Charge>
+                <CountMax value="5"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value=""/>
+            </Charge>
+            <Cooldown Link="" TimeUse="25"/>
+        </EffectCost>
+        <RefundFraction Cooldown="30"/>
+    </CItemEffectInstant>
+</Catalog>

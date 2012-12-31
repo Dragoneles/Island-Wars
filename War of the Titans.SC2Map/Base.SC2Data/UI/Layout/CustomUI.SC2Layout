@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Constant name="CommandButtonGap" val="3"/>
+    <Frame type="GameUI" name="GameUI" file="GameUI">
+        <Frame type="Frame" name="UIContainer">
+            <Frame type="Frame" name="FullscreenUpperContainer">
+                <Frame type="MenuBar" name="MenuBar">
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+
+                <Frame type="HeroPanel" name="HeroPanel">
+                    <Visible val="false"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="5000"/>
+                </Frame>
+
+                <Frame type="ChatBar" name="ChatBar">
+                    <Anchor side="Top" relative="$this" pos="Min" offset="-10"/>
+                    <Frame type="Image" name="BackgroundImage">
+                        <Texture val="Assets\Textures\ui_camapaignmenu_dialogbox_base.dds"/>
+                        <TextureType val="HorizontalBorder"/>
+                        <Tiled val="true"/>
+                    </Frame>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="ConsoleUIContainer">
+                <Frame type="MissionTimePanel" name="MissionTimePanel">
+                    <Anchor side="Left" relative="$parent/MinimapPanel" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent/MinimapPanel" pos="Min" offset="-10"/>
+                    <Anchor side="Top" relative="$this" pos="Min" offset="100"/>
+                    <Anchor side="Right" relative="$parent/MinimapPanel" pos="Max" offset="0"/>
+                    <Frame type="Image" name="BackgroundImage">
+                        <Texture val="Assets\Textures\ui_camapaignmenu_dialogbox_base.dds"/>
+                        <TextureType val="HorizontalBorder"/>
+                        <Tiled val="true"/>
+                    </Frame>
+                </Frame>
+
+                <Frame type="CommandPanel" name="CommandPanel">
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="-100"/>
+                    <Anchor side="Top" relative="$this" pos="Min" offset="100"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                    <Width val="522"/>
+                    <Height val="160"/>
+                    <Frame type="CommandTooltip" name="CommandTooltip">
+                        <Anchor side="Top" relative="$this" pos="Min" offset="58"/>
+                        <Anchor side="Left" relative="$this" pos="Min" offset="62"/>
+                        <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton00">
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="58"/>
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="62"/>
+                        <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+                        <Width val="84"/>
+                        <Height val="84"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton01">
+                        <Width val="84"/>
+                        <Height val="84"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton02">
+                        <Width val="84"/>
+                        <Height val="84"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton03">
+                        <Width val="84"/>
+                        <Height val="84"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton04">
+                        <Width val="84"/>
+                        <Height val="84"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton05">
+                        <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="8"/>
+                        <Anchor side="Right" relative="$parent/CommandButton00" pos="Min" offset="-61"/>
+                        <Width val="70"/>
+                        <Height val="70"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton06">
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="3"/>
+                        <Anchor side="Bottom" relative="$parent" pos="Max" offset="-500"/>
+                        <Anchor side="Right" relative="$parent" pos="Min" offset="0"/>
+                        <Width val="60"/>
+                        <Height val="60"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton10">
+                        <Anchor side="Top" relative="$this" pos="Max" offset="0"/>
+                        <Anchor side="Bottom" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+                        <Anchor side="Left" relative="$parent/CommandButton00" pos="Max" offset="-72"/>
+                        <Width val="60"/>
+                        <Height val="60"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton11">
+                        <Anchor side="Top" relative="$this" pos="Max" offset="0"/>
+                        <Anchor side="Bottom" relative="$parent/CommandButton01" pos="Min" offset="0"/>
+                        <Anchor side="Left" relative="$parent/CommandButton01" pos="Max" offset="-72"/>
+                        <Width val="60"/>
+                        <Height val="60"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton12">
+                        <Anchor side="Top" relative="$this" pos="Max" offset="0"/>
+                        <Anchor side="Bottom" relative="$parent/CommandButton02" pos="Min" offset="0"/>
+                        <Anchor side="Left" relative="$parent/CommandButton02" pos="Max" offset="-72"/>
+                        <Width val="60"/>
+                        <Height val="60"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton13">
+                        <Anchor side="Top" relative="$this" pos="Max" offset="0"/>
+                        <Anchor side="Bottom" relative="$parent/CommandButton03" pos="Min" offset="0"/>
+                        <Anchor side="Left" relative="$parent/CommandButton03" pos="Max" offset="-72"/>
+                        <Width val="60"/>
+                        <Height val="60"/>
+                    </Frame>
+
+                    <Frame type="CommandButton" name="CommandButton14">
+                        <Anchor side="Top" relative="$this" pos="Max" offset="0"/>
+                        <Anchor side="Bottom" relative="$parent/CommandButton04" pos="Min" offset="0"/>
+                        <Anchor side="Left" relative="$parent/CommandButton04" pos="Max" offset="-72"/>
+                        <Width val="60"/>
+                        <Height val="60"/>
+                    </Frame>
+                </Frame>
+
+                <Frame type="InventoryPanel" name="InventoryPanel">
+                    <Frame type="CommandTooltip" name="InventoryTooltip">
+                        <Anchor side="Top" relative="$this" pos="Min" offset="58"/>
+                        <Anchor side="Left" relative="$this" pos="Min" offset="62"/>
+                        <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+                    </Frame>
+
+                    <Frame type="InventoryContainer" name="InventoryButtons">
+                        <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15"/>
+                        <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                        <Frame type="CommandButton" name="Button05">
+                            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-28"/>
+                            <Anchor side="Right" relative="$parent" pos="Max" offset="-20"/>
+                            <Width val="60"/>
+                            <Height val="60"/>
+                        </Frame>
+
+                        <Frame type="CommandButton" name="Button04">
+                            <Width val="60"/>
+                            <Height val="60"/>
+                        </Frame>
+
+                        <Frame type="CommandButton" name="Button03">
+                            <Width val="60"/>
+                            <Height val="60"/>
+                        </Frame>
+
+                        <Frame type="CommandButton" name="Button02">
+                            <Width val="60"/>
+                            <Height val="60"/>
+                        </Frame>
+
+                        <Frame type="CommandButton" name="Button01">
+                            <Width val="60"/>
+                            <Height val="60"/>
+                        </Frame>
+
+                        <Frame type="CommandButton" name="Button00">
+                            <Width val="60"/>
+                            <Height val="60"/>
+                        </Frame>
+                    </Frame>
+                </Frame>
+
+                <Frame type="ControlGroupPanel" name="ControlGroupPanel">
+                    <Visible val="false"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="5000"/>
+                </Frame>
+
+                <Frame type="Image" name="BattleNetButtonFriendsFrameImage">
+                    <Visible val="false"/>
+                </Frame>
+
+                <Frame type="InfoPanel" name="InfoPanel">
+                    <Height val="300"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="-250"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Frame type="InfoPaneHero" name="InfoPaneHero">
+                        <Width val="464"/>
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="350"/>
+                        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Right" relative="$this" pos="Max" offset="0"/>
+                        <Frame type="Label" name="NameLabel">
+                            <Style val="HeroName"/>
+                            <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+                            <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
+                            <Anchor side="Right" relative="$this" pos="Max" offset="0"/>
+                        </Frame>
+
+                        <Frame type="ProgressBar" name="ExperienceBar">
+                            <Texture val="Assets/Textures/ui_ingame_menubutton_normaloverandpressedover.dds"/>
+                            <MinValue val="0.000000"/>
+                            <MaxValue val="1.000000"/>
+                            <Color val="#FFFF80"/>
+                            <ColorStep val="#FFFF40"/>
+                            <Width val="400"/>
+                            <Height val="20"/>
+                        </Frame>
+
+                        <Frame type="Label" name="ExperienceLabel">
+                            <Style val="InfoPaneLabel"/>
+                            <Visible val="false"/>
+                            <Anchor side="Top" relative="$parent" pos="Min" offset="5000"/>
+                        </Frame>
+
+                        <Frame type="EquipmentIcon" name="WeaponIcon">
+                            <Width val="40"/>
+                            <Height val="40"/>
+                            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Max" offset="10"/>
+                            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        </Frame>
+
+                        <Frame type="Label" name="WeaponLabel">
+                            <Style val="InfoPaneLabel"/>
+                            <Anchor side="Top" relative="$parent/WeaponIcon" pos="Min" offset="12"/>
+                            <Anchor side="Bottom" relative="$parent/WeaponIcon" pos="Max" offset="0"/>
+                            <Anchor side="Left" relative="$parent/WeaponIcon" pos="Max" offset="10"/>
+                        </Frame>
+
+                        <Frame type="EquipmentIcon" name="ArmorIcon">
+                            <Width val="40"/>
+                            <Height val="40"/>
+                            <Anchor side="Top" relative="$parent/WeaponIcon" pos="Max" offset="10"/>
+                            <Anchor side="Left" relative="$parent/WeaponIcon" pos="Min" offset="0"/>
+                        </Frame>
+
+                        <Frame type="Label" name="ArmorLabel">
+                            <Style val="InfoPaneLabel"/>
+                            <Anchor side="Top" relative="$parent/ArmorIcon" pos="Min" offset="12"/>
+                            <Anchor side="Bottom" relative="$parent/ArmorIcon" pos="Max" offset="0"/>
+                            <Anchor side="Left" relative="$parent/ArmorIcon" pos="Max" offset="10"/>
+                        </Frame>
+
+                        <Frame type="Label" name="AttributeLabel1">
+                            <Style val="InfoPaneLabel"/>
+                            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Max" offset="30"/>
+                            <Anchor side="Left" relative="$this" pos="Mid" offset="0"/>
+                            <Anchor side="Right" relative="$parent" pos="Max" offset="-140"/>
+                        </Frame>
+
+                        <Frame type="Label" name="AttributeLabel2">
+                            <Style val="InfoPaneLabel"/>
+                            <Anchor side="Top" relative="$parent/AttributeLabel1" pos="Max" offset="4"/>
+                            <Anchor side="Left" relative="$parent/AttributeLabel1" pos="Min" offset="0"/>
+                        </Frame>
+
+                        <Frame type="Label" name="AttributeLabel3">
+                            <Style val="InfoPaneLabel"/>
+                            <Anchor side="Top" relative="$parent/AttributeLabel2" pos="Max" offset="4"/>
+                            <Anchor side="Left" relative="$parent/AttributeLabel2" pos="Min" offset="0"/>
+                        </Frame>
+
+                        <Frame type="Label" name="AttributeLabel4">
+                            <Style val="InfoPaneLabel"/>
+                            <Anchor side="Top" relative="$parent/AttributeLabel3" pos="Max" offset="4"/>
+                            <Anchor side="Left" relative="$parent/AttributeLabel3" pos="Min" offset="0"/>
+                        </Frame>
+
+                        <Frame type="Label" name="AttributeLabel5">
+                            <Style val="InfoPaneLabel"/>
+                            <Anchor side="Top" relative="$parent/AttributeLabel4" pos="Max" offset="4"/>
+                            <Anchor side="Left" relative="$parent/AttributeLabel4" pos="Min" offset="0"/>
+                        </Frame>
+                    </Frame>
+                </Frame>
+
+                <Frame type="MinimapPanel" name="MinimapPanel">
+                    <Anchor side="Left" relative="$this" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="-25"/>
+                    <Anchor side="Top" relative="$this" pos="Min" offset="100"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="-25"/>
+                    <Width val="291"/>
+                    <Height val="286"/>
+                    <Frame type="Minimap" name="Minimap">
+                        <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+                        <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Width val="291"/>
+                        <Height val="286"/>
+                    </Frame>
+
+                    <Frame type="Button" name="PingButton">
+                        <Anchor side="Right" relative="$parent" pos="Min" offset="-6"/>
+                        <Anchor side="Bottom" relative="$parent" pos="Max" offset="-226"/>
+                        <Height val="50"/>
+                        <Width val="50"/>
+                        <Frame type="Image" name="Icon">
+                            <Texture val="Assets\Textures\protoss_target_ring.dds"/>
+                        </Frame>
+                    </Frame>
+
+                    <Frame type="Button" name="TerrainButton">
+                        <Anchor side="Right" relative="$parent" pos="Min" offset="-6"/>
+                        <Anchor side="Bottom" relative="$parent\PingButton" pos="Max" offset="52"/>
+                        <Height val="50"/>
+                        <Width val="50"/>
+                        <Frame type="Image" name="Icon">
+                            <Texture val="EditorData\Images\Toolbar_Terrain_TerrainLayer.tga"/>
+                        </Frame>
+                    </Frame>
+
+                    <Frame type="Button" name="ColorButton">
+                        <Anchor side="Right" relative="$parent" pos="Min" offset="-6"/>
+                        <Anchor side="Bottom" relative="$parent\TerrainButton" pos="Max" offset="52"/>
+                        <Height val="50"/>
+                        <Width val="50"/>
+                        <Frame type="Image" name="Icon">
+                            <Texture val="Assets\Textures\btn-minimap-toggleallies.dds"/>
+                        </Frame>
+                    </Frame>
+                </Frame>
+
+                <Frame type="Image" name="MinimapPanelBorder">
+                    <Anchor side="Left" relative="$parent/MinimapPanel" pos="Min" offset="-20"/>
+                    <Anchor side="Right" relative="$parent/MinimapPanel" pos="Max" offset="20"/>
+                    <Anchor side="Top" relative="$parent/MinimapPanel" pos="Min" offset="-10"/>
+                    <Anchor side="Bottom" relative="$parent/MinimapPanel" pos="Max" offset="30"/>
+                    <Texture val="Assets\Textures\ui_camapaignmenu_dialogbox_base.dds"/>
+                    <TextureType val="HorizontalBorder"/>
+                    <RenderPriority val="500"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="ConsolePanel" name="ConsolePanel">
+                <Frame type="Model" name="InfopanelModel">
+                    <Visible val="false"/>
+                </Frame>
+
+                <Frame type="PortraitPanel" name="PortraitPanel">
+                    <Anchor side="Bottom" relative="$parent" pos="Min" offset="5000"/>
+                    <Visible val="false"/>
+                </Frame>
+
+                <Frame type="Model" name="MinimapModel">
+                    <Visible val="false"/>
+                </Frame>
+
+                <Frame type="Model" name="CommandPanelModel">
+                    <Visible val="false"/>
+                </Frame>
+
+                <Frame type="Frame" name="MinimapStub">
+                    <Visible val="false"/>
+                </Frame>
+
+                <Frame type="Frame" name="InfoStub">
+                    <Visible val="false"/>
+                </Frame>
+
+                <Frame type="Frame" name="CommandStub">
+                    <Visible val="false"/>
+                </Frame>
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CAbilInventory id="HeroInventory">
+        <InfoArray EmptyFace="InventoryEmptyFace">
+            <Classes value="Item"/>
+            <Classes value="Consumable"/>
+        </InfoArray>
+        <InfoArray EmptyFace="InventoryEmptyFace">
+            <Classes value="Item"/>
+            <Classes value="Consumable"/>
+        </InfoArray>
+        <InfoArray EmptyFace="InventoryEmptyFace">
+            <Classes value="Item"/>
+            <Classes value="Consumable"/>
+        </InfoArray>
+        <InfoArray EmptyFace="InventoryEmptyFace">
+            <Classes value="Item"/>
+            <Classes value="Consumable"/>
+        </InfoArray>
+        <InfoArray EmptyFace="InventoryEmptyFace">
+            <Classes value="Item"/>
+            <Classes value="Consumable"/>
+        </InfoArray>
+        <InfoArray EmptyFace="InventoryEmptyFace">
+            <Classes value="Item"/>
+            <Classes value="Consumable"/>
+        </InfoArray>
+    </CAbilInventory>
+    <CAbilLearn id="LearnAbilityFeritus">
+        <InfoArray index="Learn1" Abil="QuickStrike">
+            <Charge HideCount="1"/>
+            <Button DefaultButtonFace="QuickStrike" Requirements="QuickStrikenotLearnt">
+                <Flags index="AllowSelfCast" value="1"/>
+            </Button>
+        </InfoArray>
+        <InfoArray index="Learn2" Abil="Shockwave">
+            <Button DefaultButtonFace="Shockwave"/>
+        </InfoArray>
+        <Flags index="HideOnMaxLevel" value="1"/>
+        <Flags index="HideOnPointsSpent" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Points value="3"/>
+        <PointsPerLevel value="1"/>
+    </CAbilLearn>
+    <CAbilLearn id="LearnAbilityZolten">
+        <Points value="3"/>
+        <PointsPerLevel value="1"/>
+        <InfoArray index="Learn1" Abil="QuickStrike">
+            <Charge HideCount="1"/>
+            <Button DefaultButtonFace="QuickStrike" Requirements="QuickStrikenotLearnt">
+                <Flags index="AllowSelfCast" value="1"/>
+            </Button>
+        </InfoArray>
+        <InfoArray index="Learn2" Abil="Shockwave">
+            <Button DefaultButtonFace="Shockwave"/>
+        </InfoArray>
+        <Flags index="HideOnMaxLevel" value="1"/>
+        <Flags index="HideOnPointsSpent" value="1"/>
+        <Flags index="Transient" value="1"/>
+    </CAbilLearn>
+    <CAbilEffectTarget id="QuickStrike">
+        <Range value="4"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="QuickStrike"/>
+        <Effect index="0" value="QuickStrike1"/>
+        <Effect value="QuickStrike12"/>
+        <Effect value="QuickStrike122"/>
+        <Effect value="QuickStrike1222"/>
+        <Cost>
+            <Vital index="Energy" value="70"/>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <Cost>
+            <Vital index="Energy" value="100"/>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <Cost>
+            <Vital index="Energy" value="130"/>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <Cost>
+            <Vital index="Energy" value="160"/>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Ally,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Invulnerable"/>
+        <CastIntroTime value="0.5"/>
+        <CursorEffect value="QuickStrikeCursor"/>
+        <AINotifyEffect value="QuickStrike1"/>
+        <LevelButtonImage value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <LevelButtonImage value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <LevelButtonImage value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <LevelButtonName value="QuickStrikeLvlButton1"/>
+        <LevelButtonName value="QuickStrikeLvlButton2"/>
+        <LevelButtonName value="QuickStrikeLvlButton3"/>
+        <LevelButtonTooltip value="Button/Tooltip/QuickStrikeLevel2"/>
+        <LevelButtonTooltip value="Button/Tooltip/QuickStrikeLevel3"/>
+        <LevelButtonTooltip value="Button/Tooltip/QuickStrikeLevel4"/>
+        <LearnButtonImage value="BTNSkillz.dds"/>
+        <LearnButtonName value="ImproveQuickStrike1"/>
+        <LearnButtonName value="ImproveQuickStrike2"/>
+        <LearnButtonName value="ImproveQuickStrike3"/>
+        <LearnButtonTooltip value="Improve Quick Strike1 Tooltip"/>
+        <LearnButtonTooltip value="Improve Quick Strike2 Tooltip"/>
+        <LearnButtonTooltip value="Improve Quick Strike3 Tooltip"/>
+    </CAbilEffectTarget>
+</Catalog>

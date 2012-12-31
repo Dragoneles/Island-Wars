@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CRequirement id="HasPoints">
+        <EditorCategories value="Race:Neutral,TechType:Ability"/>
+        <NodeArray index="Use" Link="GTE1CountAbilLearnAbilityZoltenCompleteOnly"/>
+        <NodeArray index="Show" Link="GTE1CountAbilLearnAbilityZoltenCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HasSkirmisher">
+        <EditorCategories value="Race:Neutral"/>
+    </CRequirement>
+    <CRequirement id="QuickStrikenotLearnt">
+        <EditorCategories value="Race:Neutral"/>
+        <NodeArray index="Show" Link="LTCountAbilQuickStrikeCompleteOnly1"/>
+    </CRequirement>
+</Catalog>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Preload>
+<Asset path="Assets\Textures\btn-research-zerg-predator.dds" Type="Image"/>
+<Asset path="Assets\Textures\btn-unit-protoss-zeratul.dds" Type="Image"/>
+<Actor id="HavenTree" Variations="0,1,2,3,4,5,6,7"/>
+<Actor id="HavenCurtain" Variations="0,1,2,3"/>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="SpellResistance"/>
+<Behavior id="Armor"/>
+<Terrain id="Haven"/>
+<Unit id="FeritusTitanofSavagery"/>
+<Unit id="MeleeCreep"/>
+<Unit id="ZoltenTitanofBlades"/>
+</Preload>

@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CBehaviorBuff id="Armor">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="100"/>
+        <MaxStackCountPerCaster value="100"/>
+        <DamageResponse Chance="1" ModifyFraction="0.99">
+            <Kind index="Spell" value="0"/>
+            <Kind index="Splash" value="0"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorAttribute id="AttackRange">
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification WeaponRange="0.01"/>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="AttackRange2">
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="AttackRange" Points="1"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="AttackSpeed">
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification AttackSpeedMultiplier="1.01"/>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="AttackSpeed2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="AttackSpeed" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Damage">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="1000"/>
+        <Modification>
+            <DamageDealtScaled index="Melee" value="0.01"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Damage2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Damage" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="DetectionRadius">
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="DetectionRadius2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="DetectionRadius" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Energy">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="10000"/>
+        <Modification DetectArc="0" RadarArc="0">
+            <VitalMaxArray index="Energy" value="1"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Energy2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Energy" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="EnergyRegeneration">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="100"/>
+        <Modification DetectArc="0" RadarArc="0">
+            <VitalRegenArray index="Energy" value="0.1992"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="EnergyRegeneration2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="EnergyRegeneration" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorBuff id="FeritusAttributes">
+        <Cost>
+            <Charge Link="Behavior/ZoltenAttributes"/>
+            <Cooldown Link="Behavior/ZoltenAttributes"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <AttributeChangeArray Attribute="AttackRange2" Points="40"/>
+            <AttributeChangeArray Attribute="AttackSpeed2" Points="40"/>
+            <AttributeChangeArray Attribute="Damage2" Points="70"/>
+            <AttributeChangeArray Attribute="DetectionRadius2"/>
+            <AttributeChangeArray Attribute="Energy2" Points="450"/>
+            <AttributeChangeArray Attribute="EnergyRegeneration2" Points="5"/>
+            <AttributeChangeArray Attribute="Life2" Points="649"/>
+            <AttributeChangeArray Attribute="LifeRegeneration2" Points="5"/>
+            <AttributeChangeArray Attribute="Lifesteal2" Points="5"/>
+            <AttributeChangeArray Attribute="MovementSpeed2" Points="235"/>
+            <AttributeChangeArray Attribute="PhysicalArmor2" Points="27"/>
+            <AttributeChangeArray Attribute="Shields2"/>
+            <AttributeChangeArray Attribute="ShieldsRegeneration2"/>
+            <AttributeChangeArray Attribute="SightRange2" Points="10"/>
+            <AttributeChangeArray Attribute="SpellStrength2"/>
+            <AttributeChangeArray Attribute="SpellResistance3" Points="22"/>
+            <AttributeChangeArray Attribute="Timescale2"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/ZoltenAttributes"/>
+                    <Cooldown Link="Behavior/ZoltenAttributes"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/ZoltenAttributes"/>
+                <Cooldown Link="Behavior/ZoltenAttributes"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="FeritusLevels">
+        <XPFraction index="DamageDealt" value="0.1"/>
+        <XPFraction index="DamageTaken" value="0.1"/>
+        <SharedXPRadius index="Kills" value="10"/>
+        <SharedXPFraction index="Kills" value="1"/>
+        <VeterancyLevelArray MinVeterancyXP="10">
+            <Modification>
+                <AttributeChangeArray Attribute="AgilityZolten" Points="2"/>
+                <AttributeChangeArray Attribute="IntellectZolten" Points="1"/>
+                <AttributeChangeArray Attribute="StrengthZolten" Points="1"/>
+                <DeathResponse>
+                    <Cost>
+                        <Charge Link="Behavior/ZoltenLevels"/>
+                        <Cooldown Link="Behavior/ZoltenLevels"/>
+                    </Cost>
+                </DeathResponse>
+            </Modification>
+        </VeterancyLevelArray>
+    </CBehaviorVeterancy>
+    <CBehaviorBuff id="HealingPotion">
+        <Duration value="30"/>
+        <Modification DetectArc="0" RadarArc="0">
+            <VitalRegenArray index="Life" value="5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorAttribute id="Life">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <MaxPoints value="10000"/>
+        <Modification DetectArc="0" RadarArc="0">
+            <VitalMaxArray index="Life" value="1"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Life2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Life" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="LifeRegeneration">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="100"/>
+        <Modification DetectArc="0" RadarArc="0">
+            <VitalRegenArray index="Life" value="0.1992"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="LifeRegeneration2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="LifeRegeneration" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Lifesteal">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="100"/>
+        <Modification DetectArc="0" RadarArc="0">
+            <VitalDamageLeechArray index="Life">
+                <KindArray index="Spell" value="0.001"/>
+                <KindArray index="Melee" value="0.001"/>
+                <KindArray index="Ranged" value="0.001"/>
+                <KindArray index="Splash" value="0.001"/>
+            </VitalDamageLeechArray>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Lifesteal2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Lifesteal" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="MovementSpeed">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="1000"/>
+        <Modification MoveSpeedBonus="0.0117"/>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="MovementSpeed2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="MovementSpeed" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="PhysicalArmor">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="100"/>
+        <Modification LifeArmorBonus="1" DetectArc="0" RadarArc="0"/>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="PhysicalArmor2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="PhysicalArmor" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorBuff id="QuickStrike">
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorAttribute id="QuickStrikeScaling">
+        <MaxPoints value="10000"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <PointGainEffect value="QuickStrikeScalingAdd"/>
+        <PointLossEffect value="QuickStrikeScalingRemove"/>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Shields">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="10000"/>
+        <Modification DetectArc="0" RadarArc="0">
+            <VitalMaxArray index="Shields" value="1"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Shields2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Shields" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="ShieldsRegeneration">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="100"/>
+        <Modification DetectArc="0" RadarArc="0">
+            <VitalRegenArray index="Shields" value="0.1992"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="ShieldsRegeneration2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="ShieldsRegeneration" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="SightRange">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="32"/>
+        <Modification SightBonus="1" DetectArc="0" RadarArc="0"/>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="SightRange2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="SightRange" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorBuff id="Skirmisher">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="5"/>
+        <Duration value="10"/>
+        <Modification MoveSpeedBonus="0.1015"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Skirmisher2">
+        <Cost>
+            <Charge Link="Behavior/QuickStrike"/>
+            <Cooldown Link="Behavior/QuickStrike"/>
+        </Cost>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/QuickStrike"/>
+                    <Cooldown Link="Behavior/QuickStrike"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/QuickStrike"/>
+                <Cooldown Link="Behavior/QuickStrike"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpellResistance">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="100"/>
+        <MaxStackCountPerCaster value="100"/>
+        <DamageResponse Chance="1" ModifyFraction="0.99">
+            <Kind index="Melee" value="0"/>
+            <Kind index="Ranged" value="0"/>
+            <Kind index="Splash" value="0"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorAttribute id="SpellResistance2">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="100"/>
+        <Modification ShieldArmorBonus="1" DetectArc="0" RadarArc="0"/>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="SpellResistance3">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="SpellResistance2" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="SpellStrength">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="1000"/>
+        <Modification>
+            <DamageDealtUnscaled index="Spell" value="0.01"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="SpellStrength2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="SpellStrength" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Timescale">
+        <Cost>
+            <Charge Link="Behavior/MovementSpeed"/>
+            <Cooldown Link="Behavior/MovementSpeed"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxPoints value="1000"/>
+        <Modification TimeScale="0.01" DetectArc="0" RadarArc="0">
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/MovementSpeed"/>
+                    <Cooldown Link="Behavior/MovementSpeed"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Timescale2">
+        <Cost>
+            <Charge Link="Behavior/AttackRange2"/>
+            <Cooldown Link="Behavior/AttackRange2"/>
+        </Cost>
+        <MaxPoints value="10000"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Timescale" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/AttackRange2"/>
+                    <Cooldown Link="Behavior/AttackRange2"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorBuff id="ZoltenAttributes">
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <AttributeChangeArray Attribute="AttackRange2" Points="50"/>
+            <AttributeChangeArray Attribute="AttackSpeed2" Points="30"/>
+            <AttributeChangeArray Attribute="Damage2" Points="80"/>
+            <AttributeChangeArray Attribute="DetectionRadius2"/>
+            <AttributeChangeArray Attribute="Energy2" Points="500"/>
+            <AttributeChangeArray Attribute="EnergyRegeneration2" Points="5"/>
+            <AttributeChangeArray Attribute="Life2" Points="599"/>
+            <AttributeChangeArray Attribute="LifeRegeneration2" Points="5"/>
+            <AttributeChangeArray Attribute="Lifesteal2"/>
+            <AttributeChangeArray Attribute="MovementSpeed2" Points="225"/>
+            <AttributeChangeArray Attribute="PhysicalArmor2" Points="30"/>
+            <AttributeChangeArray Attribute="Shields2"/>
+            <AttributeChangeArray Attribute="ShieldsRegeneration2"/>
+            <AttributeChangeArray Attribute="SightRange2" Points="10"/>
+            <AttributeChangeArray Attribute="SpellStrength2"/>
+            <AttributeChangeArray Attribute="SpellResistance3" Points="25"/>
+            <AttributeChangeArray Attribute="Timescale2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="ZoltenLevels">
+        <XPFraction index="DamageDealt" value="0.1"/>
+        <XPFraction index="DamageTaken" value="0.1"/>
+        <SharedXPRadius index="Kills" value="10"/>
+        <SharedXPFraction index="Kills" value="1"/>
+        <VeterancyLevelArray MinVeterancyXP="10">
+            <Modification>
+                <AttributeChangeArray Attribute="AgilityZolten" Points="2"/>
+                <AttributeChangeArray Attribute="IntellectZolten" Points="1"/>
+                <AttributeChangeArray Attribute="StrengthZolten" Points="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+    </CBehaviorVeterancy>
+</Catalog>

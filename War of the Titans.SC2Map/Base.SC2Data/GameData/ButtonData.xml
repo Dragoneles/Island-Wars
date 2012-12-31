@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CButton id="Attack">
+        <Icon value="BTNAttack.dds"/>
+    </CButton>
+    <CButton id="HealingPotion">
+        <EditorCategories value="Race:Neutral"/>
+        <Icon value="BTNPotionGreen.dds"/>
+    </CButton>
+    <CButton id="InventoryEmptyFace">
+        <Icon value="Assets\Textures\ui_techtree_buttonframe_disabled.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+    </CButton>
+    <CButton id="LearnQuickStrike">
+        <Icon value="BTNSkillz.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <HotkeyAlias value="QuickStrike"/>
+    </CButton>
+    <CButton id="LearnShockwave">
+        <Icon value="BTNSkillz.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <HotkeyAlias value="QuickStrike"/>
+    </CButton>
+    <CButton id="Move">
+        <Icon value="BTNMove.dds"/>
+    </CButton>
+    <CButton id="MoveHoldPosition">
+        <Icon value="BTNHoldPosition.dds"/>
+    </CButton>
+    <CButton id="MovePatrol">
+        <Icon value="BTNPatrol.dds"/>
+    </CButton>
+    <CButton id="QuickStrike">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+    </CButton>
+    <CButton id="QuickStrikePlaceholder">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+    </CButton>
+    <CButton id="Shockwave">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <HotkeyAlias value="QuickStrike"/>
+    </CButton>
+    <CButton id="SkillUp">
+        <Icon value="BTNSkillz.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+    </CButton>
+    <CButton id="Skirmisher">
+        <Tooltip value="Behavior/Tooltip/Skirmisher"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <HotkeyAlias value="QuickStrike"/>
+    </CButton>
+    <CButton id="Stop">
+        <Icon value="BTNStop.dds"/>
+    </CButton>
+</Catalog>

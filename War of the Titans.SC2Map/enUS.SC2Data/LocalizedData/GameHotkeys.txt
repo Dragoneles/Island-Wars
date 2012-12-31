@@ -1,0 +1,5 @@
+Button/Hotkey/HealingPotion=H
+Button/Hotkey/LearnQuickStrike=Z
+Button/Hotkey/LearnShockwave=X
+Button/Hotkey/QuickStrike=Q
+Button/Hotkey/Shockwave=W

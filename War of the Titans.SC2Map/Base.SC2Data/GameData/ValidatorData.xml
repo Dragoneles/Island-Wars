@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="NotImmunetoShockwaveDamage">
+        <Compare value="LT"/>
+        <Value value="1"/>
+        <Behavior value="ShockwaveDamageImmunity"/>
+    </CValidatorUnitCompareBehaviorCount>
+</Catalog>

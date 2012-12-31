@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CEffectApplyBehavior id="HealingPotion"/>
+    <CEffectDamage id="MeleeCreepWeapon" parent="DU_WEAP">
+        <Amount value="25"/>
+        <Random value="5"/>
+        <ArmorReduction value="0"/>
+    </CEffectDamage>
+    <CEffectSet id="QuickStrike1">
+        <Marker Link="Effect/QuickStrikeReturn"/>
+        <EffectArray value="QuickStrikeTeleport"/>
+        <EffectArray value="QuickStrikeRadius1"/>
+    </CEffectSet>
+    <CEffectSet id="QuickStrike12">
+        <Marker Link="Effect/QuickStrikeReturn"/>
+        <EffectArray value="QuickStrikeTeleport"/>
+        <EffectArray value="QuickStrikeRadius12"/>
+    </CEffectSet>
+    <CEffectSet id="QuickStrike122">
+        <Marker Link="Effect/QuickStrikeReturn"/>
+        <EffectArray value="QuickStrikeTeleport"/>
+        <EffectArray value="QuickStrikeRadius122"/>
+    </CEffectSet>
+    <CEffectSet id="QuickStrike1222">
+        <Marker Link="Effect/QuickStrikeReturn"/>
+        <EffectArray value="QuickStrikeTeleport"/>
+        <EffectArray value="QuickStrikeRadius1222"/>
+    </CEffectSet>
+    <CEffectEnumArea id="QuickStrikeCursor">
+        <AreaArray Radius="2"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="QuickStrikeDamage1">
+        <Marker Link="Effect/QuickStrike"/>
+        <Kind value="Melee"/>
+        <Amount value="1.5"/>
+        <Death value="Eviscerate"/>
+        <SearchFilters value="-;Self,Ally,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="QuickStrikeDamage2">
+        <Marker Link="Effect/QuickStrike"/>
+        <Kind value="Melee"/>
+        <Amount value="2.2"/>
+        <Death value="Eviscerate"/>
+        <SearchFilters value="-;Self,Ally,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="QuickStrikeDamage3">
+        <Marker Link="Effect/QuickStrike"/>
+        <Kind value="Melee"/>
+        <Amount value="2.9"/>
+        <Death value="Eviscerate"/>
+        <SearchFilters value="-;Self,Ally,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="QuickStrikeDamage4">
+        <Marker Link="Effect/QuickStrike"/>
+        <Kind value="Melee"/>
+        <Amount value="3.6"/>
+        <Death value="Eviscerate"/>
+        <SearchFilters value="-;Self,Ally,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="QuickStrikeDamageScaling1">
+        <ValidatorArray value="QuickStrikeDamage1PersistentTargetFilters"/>
+        <WhichLocation Value="TargetUnit"/>
+        <OffsetVectorEndLocation Value="TargetUnit"/>
+        <PeriodCount value="50"/>
+        <PeriodicEffectArray value="QuickStrikeDamage1"/>
+        <PeriodicPeriodArray value="0.01"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="QuickStrikeDamageScaling2">
+        <ValidatorArray value="QuickStrikeDamage1PersistentTargetFilters"/>
+        <Marker Link="Effect/QuickStrikeDamageScaling1"/>
+        <WhichLocation Value="TargetUnit"/>
+        <OffsetVectorEndLocation Value="TargetUnit"/>
+        <PeriodCount value="50"/>
+        <PeriodicEffectArray value="QuickStrikeDamage2"/>
+        <PeriodicPeriodArray value="0.01"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="QuickStrikeDamageScaling3">
+        <ValidatorArray value="QuickStrikeDamage1PersistentTargetFilters"/>
+        <Marker Link="Effect/QuickStrikeDamageScaling1"/>
+        <WhichLocation Value="TargetUnit"/>
+        <OffsetVectorEndLocation Value="TargetUnit"/>
+        <PeriodCount value="50"/>
+        <PeriodicEffectArray value="QuickStrikeDamage3"/>
+        <PeriodicPeriodArray value="0.01"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="QuickStrikeDamageScaling4">
+        <ValidatorArray value="QuickStrikeDamage1PersistentTargetFilters"/>
+        <Marker Link="Effect/QuickStrikeDamageScaling1"/>
+        <WhichLocation Value="TargetUnit"/>
+        <OffsetVectorEndLocation Value="TargetUnit"/>
+        <PeriodCount value="50"/>
+        <PeriodicEffectArray value="QuickStrikeDamage4"/>
+        <PeriodicPeriodArray value="0.01"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="QuickStrikeDamageSet1">
+        <Marker Link="Effect/QuickStrikeReturn"/>
+        <EffectArray value="QuickStrikeDamageScaling1"/>
+    </CEffectSet>
+    <CEffectSet id="QuickStrikeDamageSet12">
+        <Marker Link="Effect/QuickStrikeReturn"/>
+        <EffectArray value="QuickStrikeScalingDamage"/>
+        <EffectArray value="QuickStrikeDamage2"/>
+    </CEffectSet>
+    <CEffectSet id="QuickStrikeDamageSet122">
+        <Marker Link="Effect/QuickStrikeReturn"/>
+        <EffectArray value="QuickStrikeScalingDamage"/>
+        <EffectArray value="QuickStrikeDamage3"/>
+    </CEffectSet>
+    <CEffectSet id="QuickStrikeDamageSet1222">
+        <Marker Link="Effect/QuickStrikeReturn"/>
+        <EffectArray value="QuickStrikeScalingDamage"/>
+        <EffectArray value="QuickStrikeDamage4"/>
+    </CEffectSet>
+    <CEffectEnumArea id="QuickStrikeRadius1">
+        <Marker Link="Effect/QuickStrike"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <ExcludeArray/>
+        <SearchFilters value="-;Self,Ally,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Invulnerable"/>
+        <AreaArray Radius="2" Effect="QuickStrikeDamageSet1"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="QuickStrikeRadius12">
+        <Marker Link="Effect/QuickStrike"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <ExcludeArray/>
+        <SearchFilters value="-;Self,Ally,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Invulnerable"/>
+        <AreaArray Radius="2" Effect="QuickStrikeDamageSet12"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="QuickStrikeRadius122">
+        <Marker Link="Effect/QuickStrike"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <ExcludeArray/>
+        <SearchFilters value="-;Self,Ally,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Invulnerable"/>
+        <AreaArray Radius="2" Effect="QuickStrikeDamageSet122"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="QuickStrikeRadius1222">
+        <Marker Link="Effect/QuickStrike"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <ExcludeArray/>
+        <SearchFilters value="-;Self,Ally,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Invulnerable"/>
+        <AreaArray Radius="2" Effect="QuickStrikeDamageSet1222"/>
+    </CEffectEnumArea>
+    <CEffectTeleport id="QuickStrikeTeleport">
+        <WhichUnit Value="Caster"/>
+        <PlacementAround Value="TargetUnit"/>
+        <TargetLocation Value="TargetUnit"/>
+    </CEffectTeleport>
+    <CEffectApplyBehavior id="Skirmisher">
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="TitanicClaws" parent="DU_WEAP">
+        <ArmorReduction value="0"/>
+        <Death value="Eviscerate"/>
+        <DisplayFlags index="CollapseBuffed" value="1"/>
+    </CEffectDamage>
+    <CEffectSet id="TitanicClaws2">
+        <ValidatorArray value="TitanicEnergyBladeSetTargetFilters"/>
+        <EffectArray value="TitanicClaws"/>
+    </CEffectSet>
+    <CEffectDamage id="TitanicEnergyBladeDamage" parent="DU_WEAP">
+        <Death value="Eviscerate"/>
+        <ArmorReduction value="0"/>
+        <DisplayFlags index="CollapseBuffed" value="1"/>
+    </CEffectDamage>
+    <CEffectSet id="TitanicEnergyBladeSet">
+        <ValidatorArray value="TitanicEnergyBladeSetTargetFilters"/>
+        <EffectArray value="TitanicEnergyBladeDamage"/>
+        <EffectArray value="Skirmisher"/>
+    </CEffectSet>
+</Catalog>

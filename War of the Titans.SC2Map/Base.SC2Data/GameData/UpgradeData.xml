@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CUpgrade id="DiminishArmor">
+        <Icon value="Assets\Textures\btn-ability-terran-selfixarmor.dds"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,Armor,DamageResponse[0].ModifyFraction[0]" Value="0.003"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,SpellResistance,DamageResponse[0].ModifyFraction[0]" Value="0.003"/>
+        <EditorCategories value="UpgradeType:ArmorBonus"/>
+        <MaxLevel value="20"/>
+    </CUpgrade>
+</Catalog>

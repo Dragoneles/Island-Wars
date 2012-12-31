@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StyleFile>
+    <Style name="HeroName" template="AchievementFrameName_Prot" font="UI\Fonts\EurostileExt-Med.otf" height="22" vjustify="Middle" hjustify="Left" textcolor="255,156,235,255" highlightcolor="255,0,0,0" disabledcolor="255,68,68,68" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="2"/>
+    <Style name="TooltipValue" template="Damage_Kicker" font="UI\Fonts\Eurostile-Bol.otf" height="20" vjustify="Top" hjustify="Left" fontflags="Bold" styleflags="Shadow" textcolor="255,255,255,128" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1"/>
+    <Style name="Tooltip" template="ChallengeVictoryScoreText" font="UI\Fonts\EurostileExt-Reg.otf" height="18" vjustify="Middle" hjustify="Left" fontflags="Outline" styleflags="Shadow" textcolor="255,128,255,255" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="2"/>
+    <Style name="InfoPaneLabel" template="AchievementFrameDescription_Prot" font="UI\Fonts\Eurostile-Reg.otf" height="20" vjustify="Middle" hjustify="Left" textcolor="255,47,142,238" highlightcolor="255,0,0,0" disabledcolor="255,102,102,102" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="2"/>
+</StyleFile>

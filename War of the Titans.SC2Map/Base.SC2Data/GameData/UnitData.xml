@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CUnit id="FeritusTitanofSavagery">
+        <DeathRevealRadius value="3"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="Hero" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Response value="Nothing"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeArmorDisplayFlags index="CollapseBuffed" value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/Armor"/>
+        <EnergyRegenDelay value="5"/>
+        <ShieldArmorDisplayFlags index="CollapseBuffed" value="1"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/Spell Resistance"/>
+        <SpeedDisplayFlags index="CollapseBuffed" value="1"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <AttackTargetPriority value="19"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="100"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="LearnAbilityFeritus"/>
+        <AbilArray Link="HeroInventory"/>
+        <BehaviorArray Link="FeritusLevels"/>
+        <BehaviorArray Link="FeritusAttributes"/>
+        <BehaviorArray Link="AttackRange"/>
+        <BehaviorArray Link="AttackSpeed"/>
+        <BehaviorArray Link="Damage"/>
+        <BehaviorArray Link="DetectionRadius"/>
+        <BehaviorArray Link="Energy"/>
+        <BehaviorArray Link="EnergyRegeneration"/>
+        <BehaviorArray Link="Life"/>
+        <BehaviorArray Link="LifeRegeneration"/>
+        <BehaviorArray Link="Lifesteal"/>
+        <BehaviorArray Link="MovementSpeed"/>
+        <BehaviorArray Link="PhysicalArmor"/>
+        <BehaviorArray Link="Shields"/>
+        <BehaviorArray Link="ShieldsRegeneration"/>
+        <BehaviorArray Link="SightRange"/>
+        <BehaviorArray Link="SpellResistance2"/>
+        <BehaviorArray Link="SpellStrength"/>
+        <BehaviorArray Link="Timescale"/>
+        <BehaviorArray Link="AttackRange2"/>
+        <BehaviorArray Link="AttackSpeed2"/>
+        <BehaviorArray Link="Damage2"/>
+        <BehaviorArray Link="DetectionRadius2"/>
+        <BehaviorArray Link="Energy2"/>
+        <BehaviorArray Link="EnergyRegeneration2"/>
+        <BehaviorArray Link="Life2"/>
+        <BehaviorArray Link="LifeRegeneration2"/>
+        <BehaviorArray Link="Lifesteal2"/>
+        <BehaviorArray Link="MovementSpeed2"/>
+        <BehaviorArray Link="PhysicalArmor2"/>
+        <BehaviorArray Link="Shields2"/>
+        <BehaviorArray Link="ShieldsRegeneration2"/>
+        <BehaviorArray Link="SightRange2"/>
+        <BehaviorArray Link="SpellResistance3"/>
+        <BehaviorArray Link="SpellStrength2"/>
+        <BehaviorArray Link="Timescale2"/>
+        <WeaponArray Link="TitanicClaws"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="4"/>
+        </CardLayouts>
+        <CargoSize value="2"/>
+        <ScoreKill value="5000"/>
+        <SubgroupPriority value="90"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="300"/>
+        <HotkeyCategory value="Unit/Category/ProtossStory"/>
+    </CUnit>
+    <CUnit id="MeleeCreep">
+        <DeathRevealType value="Vision"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="250"/>
+        <LifeMax value="250"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <Speed value="2.25"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="6"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="15"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="10"/>
+        <KillResource index="Minerals" value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <WeaponArray Link="MeleeCreepWeapon"/>
+        <CardLayouts>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="4"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="1" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="3"/>
+        </CardLayouts>
+        <CargoSize value="1"/>
+        <ScoreKill value="50"/>
+        <ScoreResult value="Units"/>
+        <SubgroupPriority value="8"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Zergling"/>
+        <SubgroupAlias value="Zergling"/>
+        <GlossaryCategory value="Unit/Category/Creep"/>
+        <GlossaryPriority value="1"/>
+        <HotkeyCategory value="Unit/Category/Creep"/>
+        <KillDisplay value="Never"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <TauntDuration index="Cheer" value="5"/>
+        <TauntDuration index="Dance" value="5"/>
+        <LifeArmorDisplayFlags index="CollapseBuffed" value="1"/>
+        <ShieldArmorDisplayFlags index="CollapseBuffed" value="1"/>
+        <SpeedDisplayFlags index="CollapseBuffed" value="1"/>
+    </CUnit>
+    <CUnit id="ZoltenTitanofBlades">
+        <DeathRevealRadius value="3"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="Hero" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/Armor"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/Spell Resistance"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <AttackTargetPriority value="19"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="100"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="QuickStrike"/>
+        <AbilArray Link="LearnAbilityZolten"/>
+        <AbilArray Link="HeroInventory"/>
+        <AbilArray Link="Shockwave"/>
+        <BehaviorArray Link="ZoltenLevels"/>
+        <BehaviorArray Link="QuickStrikeScaling"/>
+        <BehaviorArray Link="QuickStrike"/>
+        <BehaviorArray Link="Skirmisher2"/>
+        <BehaviorArray Link="ZoltenAttributes"/>
+        <BehaviorArray Link="AttackRange"/>
+        <BehaviorArray Link="AttackSpeed"/>
+        <BehaviorArray Link="Damage"/>
+        <BehaviorArray Link="DetectionRadius"/>
+        <BehaviorArray Link="Energy"/>
+        <BehaviorArray Link="EnergyRegeneration"/>
+        <BehaviorArray Link="Life"/>
+        <BehaviorArray Link="LifeRegeneration"/>
+        <BehaviorArray Link="Lifesteal"/>
+        <BehaviorArray Link="MovementSpeed"/>
+        <BehaviorArray Link="PhysicalArmor"/>
+        <BehaviorArray Link="Shields"/>
+        <BehaviorArray Link="ShieldsRegeneration"/>
+        <BehaviorArray Link="SightRange"/>
+        <BehaviorArray Link="SpellResistance2"/>
+        <BehaviorArray Link="SpellStrength"/>
+        <BehaviorArray Link="Timescale"/>
+        <BehaviorArray Link="AttackRange2"/>
+        <BehaviorArray Link="AttackSpeed2"/>
+        <BehaviorArray Link="Damage2"/>
+        <BehaviorArray Link="DetectionRadius2"/>
+        <BehaviorArray Link="Energy2"/>
+        <BehaviorArray Link="EnergyRegeneration2"/>
+        <BehaviorArray Link="Life2"/>
+        <BehaviorArray Link="LifeRegeneration2"/>
+        <BehaviorArray Link="Lifesteal2"/>
+        <BehaviorArray Link="MovementSpeed2"/>
+        <BehaviorArray Link="PhysicalArmor2"/>
+        <BehaviorArray Link="Shields2"/>
+        <BehaviorArray Link="ShieldsRegeneration2"/>
+        <BehaviorArray Link="SightRange2"/>
+        <BehaviorArray Link="SpellResistance3"/>
+        <BehaviorArray Link="SpellStrength2"/>
+        <BehaviorArray Link="Timescale2"/>
+        <WeaponArray Link="TitanicEnergyBlade"/>
+        <CardLayouts>
+            <LayoutButtons Face="Skirmisher" Type="Passive" Behavior="Skirmisher" Row="1" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="4"/>
+            <LayoutButtons Face="LearnQuickStrike" Type="AbilCmd" AbilCmd="LearnAbilityZolten,Learn1" Row="2" Column="0"/>
+            <LayoutButtons Face="QuickStrike" Type="AbilCmd" AbilCmd="QuickStrike,Execute" Row="0" Column="0"/>
+            <LayoutButtons>
+                <Face value="QuickStrikePlaceholder"/>
+                <Type value="Passive"/>
+                <Behavior value="QuickStrike"/>
+                <Requirements value="QuickStrikenotLearnt"/>
+                <Row value="0"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons Face="LearnShockwave" Type="AbilCmd" AbilCmd="LearnAbilityZolten,Learn2" Row="2" Column="1"/>
+            <LayoutButtons Face="Shockwave" Type="AbilCmd" AbilCmd="Shockwave,0" Row="0" Column="1"/>
+        </CardLayouts>
+        <CargoSize value="2"/>
+        <ScoreKill value="5000"/>
+        <SubgroupPriority value="90"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="300"/>
+        <HotkeyCategory value="Unit/Category/ProtossStory"/>
+        <EnergyRegenDelay value="5"/>
+        <Response value="Nothing"/>
+        <LifeArmorDisplayFlags index="CollapseBuffed" value="1"/>
+        <ShieldArmorDisplayFlags index="CollapseBuffed" value="1"/>
+        <SpeedDisplayFlags index="CollapseBuffed" value="1"/>
+    </CUnit>
+</Catalog>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CWeaponLegacy id="MeleeCreepWeapon">
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.1"/>
+        <Period value="1.5"/>
+        <RangeDisplayFlags index="CollapseBuffed" value="1"/>
+        <PeriodDisplayFlags index="CollapseBuffed" value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TitanicClaws">
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0"/>
+        <RangeDisplayFlags index="CollapseBuffed" value="1"/>
+        <Period value="2"/>
+        <PeriodDisplayFlags index="CollapseBuffed" value="1"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="TitanicClaws2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TitanicEnergyBlade">
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="TitanicEnergyBladeDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0"/>
+        <Period value="2"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="TitanicEnergyBladeSet"/>
+        <RangeDisplayFlags index="CollapseBuffed" value="1"/>
+        <PeriodDisplayFlags index="CollapseBuffed" value="1"/>
+    </CWeaponLegacy>
+</Catalog>
