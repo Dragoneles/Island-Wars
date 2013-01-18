@@ -40,10 +40,23 @@ const int gv_heroSelectionPanelyOffset = 25;
 //--------------------------------------------------------------------------------------------------
 // Global Structures
 //--------------------------------------------------------------------------------------------------
+struct gs_Teams {
+    text lv_teamName;
+    int lv_teamID;
+    color lv_teamColor;
+    playergroup lv_playerGroup;
+    int[7] lv_kills;
+    int[7] lv_assists;
+    int[7] lv_deaths;
+    int[7] lv_towersDestroyed;
+    int[7] lv_creepsSlain;
+    int[7] lv_goldGained;
+};
+
 struct gs_HeroLibrary {
     string lv_unitType;
     text lv_description;
-    int[6] lv_role;
+    int[7] lv_role;
     string lv_icon;
     string lv_name;
 };
@@ -51,8 +64,10 @@ struct gs_HeroLibrary {
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
+gs_Teams[3] gv_teams;
+int gv_cTeam;
 unit[gv_nPlayers + 1] gv_hero;
-int[gv_nPlayers + 1] gv_heroSelectionDialog;
+int[3] gv_heroSelectionDialog;
 int gv_cPanel;
 int gv_heroSelectionPanel;
 int gv_dialogWidth;
@@ -73,12 +88,51 @@ void InitGlobals () {
     int init_i1;
 
     init_i = 0;
+    while (init_i <= 2) {
+        gv_teams[init_i].lv_teamName = null;
+        gv_teams[init_i].lv_teamID = 0;
+        gv_teams[init_i].lv_teamColor = Color(0,0,0);
+        gv_teams[init_i].lv_playerGroup = PlayerGroupEmpty();
+        init_i1 = 0;
+        while (init_i1 <= 6) {
+            gv_teams[init_i].lv_kills[init_i1] = 0;
+            init_i1 = init_i1 + 1;
+        }
+        init_i1 = 0;
+        while (init_i1 <= 6) {
+            gv_teams[init_i].lv_assists[init_i1] = 0;
+            init_i1 = init_i1 + 1;
+        }
+        init_i1 = 0;
+        while (init_i1 <= 6) {
+            gv_teams[init_i].lv_deaths[init_i1] = 0;
+            init_i1 = init_i1 + 1;
+        }
+        init_i1 = 0;
+        while (init_i1 <= 6) {
+            gv_teams[init_i].lv_towersDestroyed[init_i1] = 0;
+            init_i1 = init_i1 + 1;
+        }
+        init_i1 = 0;
+        while (init_i1 <= 6) {
+            gv_teams[init_i].lv_creepsSlain[init_i1] = 0;
+            init_i1 = init_i1 + 1;
+        }
+        init_i1 = 0;
+        while (init_i1 <= 6) {
+            gv_teams[init_i].lv_goldGained[init_i1] = 0;
+            init_i1 = init_i1 + 1;
+        }
+        init_i = init_i + 1;
+    }
+    gv_cTeam = 0;
+    init_i = 0;
     while (init_i <= gv_nPlayers) {
         gv_hero[init_i] = null;
         init_i = init_i + 1;
     }
     init_i = 0;
-    while (init_i <= gv_nPlayers) {
+    while (init_i <= 2) {
         gv_heroSelectionDialog[init_i] = c_invalidDialogId;
         init_i = init_i + 1;
     }
@@ -99,8 +153,8 @@ void InitGlobals () {
         gv_heroLibrary[init_i].lv_unitType = null;
         gv_heroLibrary[init_i].lv_description = null;
         init_i1 = 0;
-        while (init_i1 <= 5) {
-            gv_heroLibrary[init_i].lv_role[init_i1] = 6;
+        while (init_i1 <= 6) {
+            gv_heroLibrary[init_i].lv_role[init_i1] = 7;
             init_i1 = init_i1 + 1;
         }
         gv_heroLibrary[init_i].lv_icon = null;
@@ -113,18 +167,19 @@ void InitGlobals () {
 //--------------------------------------------------------------------------------------------------
 // Global Function Declarations
 //--------------------------------------------------------------------------------------------------
+void gf_CreateandShowHeroSelection ();
 void gf_MapStartApplyArmor (unit lp_unit);
 void gf_MapStartApplyMR (unit lp_unit);
-void gf_CreateHeroSelectionDialog (int lp_player);
+void gf_AddTeam (text lp_teamName, int lp_teamID, color lp_teamColor);
+void gf_InitializeTeams ();
+void gf_CreateHeroSelectionDialog (int lp_team);
 void gf_CreateFrame (int lp_panel, playergroup lp_playerGroup, int lp_cHero);
-void gf_AddHero (string lp_unitType, string lp_name, text lp_description, string lp_icon, int lp_role1, int lp_role2, int lp_role3, int lp_role4, int lp_role5);
+void gf_AddHero (string lp_unitType, string lp_name, text lp_description, string lp_icon, int lp_role1, int lp_role2, int lp_role3, int lp_role4, int lp_role5, int lp_role6);
 void gf_SetHeroes ();
 
 //--------------------------------------------------------------------------------------------------
 // Trigger Variables
 //--------------------------------------------------------------------------------------------------
-trigger gt_ShowHeroSelectionDialog;
-trigger gt_HideHeroSelectionDialog;
 trigger gt_Init;
 trigger gt_ArmorDiminish;
 trigger gt_ApplyArmorArmorChange;
@@ -139,6 +194,17 @@ trigger gt_ApplySpellResistTrainingComplete;
 //--------------------------------------------------------------------------------------------------
 // Global Functions
 //--------------------------------------------------------------------------------------------------
+void gf_CreateandShowHeroSelection () {
+    // Implementation
+    IntLoopBegin(1, 2);
+    while (!IntLoopDone()) {
+        gf_CreateHeroSelectionDialog(IntLoopCurrent());
+        DialogSetVisible(gv_heroSelectionDialog[IntLoopCurrent()], gv_teams[IntLoopCurrent()].lv_playerGroup, true);
+        IntLoopStep();
+    }
+    IntLoopEnd();
+}
+
 void gf_MapStartApplyArmor (unit lp_unit) {
     // Variable Declarations
     fixed lv_percentage;
@@ -165,24 +231,51 @@ void gf_MapStartApplyMR (unit lp_unit) {
     UnitBehaviorAdd(lp_unit, "SpellResistance", lp_unit, FixedToInt((lv_percentage * 100.0)));
 }
 
-void gf_CreateHeroSelectionDialog (int lp_player) {
+void gf_AddTeam (text lp_teamName, int lp_teamID, color lp_teamColor) {
     // Implementation
+    gv_cTeam += 1;
+    gv_teams[gv_cTeam].lv_teamName = lp_teamName;
+    gv_teams[gv_cTeam].lv_teamID = lp_teamID;
+    gv_teams[gv_cTeam].lv_teamColor = lp_teamColor;
+}
+
+void gf_InitializeTeams () {
+    // Implementation
+}
+
+void gf_CreateHeroSelectionDialog (int lp_team) {
+    int auto423A6C20_ae;
+    int auto423A6C20_ai;
+
+    // Variable Declarations
+    playergroup lv_team;
+    int lv_x;
+
+    // Variable Initialization
+    lv_team = PlayerGroupEmpty();
+    lv_x = 0;
+
+    // Implementation
+    lv_team = gv_teams[lp_team].lv_playerGroup;
     DialogCreate(gv_dialogWidth, gv_dialogHeight, c_anchorCenter, 0, 0, true);
-    gv_heroSelectionDialog[lp_player] = DialogLastCreated();
+    gv_heroSelectionDialog[lp_team] = DialogLastCreated();
     DialogSetImage(DialogLastCreated(), gv_dialogBackground);
     DialogControlCreate(DialogLastCreated(), c_triggerControlTypePanel);
     gv_heroSelectionPanel = DialogControlLastCreated();
-    DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(lp_player), gv_heroSelectionPanelWidth, gv_heroSelectionPanelHeight);
-    DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(lp_player), c_anchorTopLeft, gv_heroSelectionPanelxOffset, gv_heroSelectionPanelyOffset);
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupSingle(lp_player));
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), gv_heroSelectionPanelBackground, PlayerGroupSingle(lp_player));
-    IntLoopBegin(1, gv_cHero);
-    while (!IntLoopDone()) {
-        gf_CreateFrame(gv_heroSelectionPanel, PlayerGroupSingle(lp_player), IntLoopCurrent());
-        IntLoopStep();
+    DialogControlSetSize(DialogControlLastCreated(), lv_team, gv_heroSelectionPanelWidth, gv_heroSelectionPanelHeight);
+    DialogControlSetPosition(DialogControlLastCreated(), lv_team, c_anchorTopLeft, gv_heroSelectionPanelxOffset, gv_heroSelectionPanelyOffset);
+    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, lv_team);
+    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), gv_heroSelectionPanelBackground, lv_team);
+    auto423A6C20_ae = gv_cHero;
+    auto423A6C20_ai = 1;
+    lv_x = 1;
+    while ((auto423A6C20_ai >= 0 && lv_x <= auto423A6C20_ae) || (auto423A6C20_ai <= 0 && lv_x >= auto423A6C20_ae)) {
+        gf_CreateFrame(gv_heroSelectionPanel, lv_team, lv_x);
+        if (lv_x == auto423A6C20_ae) {
+            break;
+        }
+        lv_x = lv_x + auto423A6C20_ai;
     }
-    IntLoopEnd();
-    DialogSetVisible(gv_heroSelectionDialog[lp_player], PlayerGroupSingle(lp_player), true);
 }
 
 void gf_CreateFrame (int lp_panel, playergroup lp_playerGroup, int lp_cHero) {
@@ -234,7 +327,7 @@ void gf_CreateFrame (int lp_panel, playergroup lp_playerGroup, int lp_cHero) {
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "Tooltip", lp_playerGroup);
 }
 
-void gf_AddHero (string lp_unitType, string lp_name, text lp_description, string lp_icon, int lp_role1, int lp_role2, int lp_role3, int lp_role4, int lp_role5) {
+void gf_AddHero (string lp_unitType, string lp_name, text lp_description, string lp_icon, int lp_role1, int lp_role2, int lp_role3, int lp_role4, int lp_role5, int lp_role6) {
     // Implementation
     gv_cHero += 1;
     gv_heroLibrary[gv_cHero].lv_unitType = lp_unitType;
@@ -246,51 +339,13 @@ void gf_AddHero (string lp_unitType, string lp_name, text lp_description, string
     gv_heroLibrary[gv_cHero].lv_role[3] = lp_role3;
     gv_heroLibrary[gv_cHero].lv_role[4] = lp_role4;
     gv_heroLibrary[gv_cHero].lv_role[5] = lp_role5;
+    gv_heroLibrary[gv_cHero].lv_role[6] = lp_role6;
 }
 
 void gf_SetHeroes () {
     // Implementation
-    gf_AddHero("ZoltenTitanofBlades", "Zolten", null, "Assets\\Textures\\btn-unit-protoss-zeratul.dds", 1, 5, 6, 6, 6);
-    gf_AddHero("FeritusTitanofSavagery", "Feritus", null, "Assets\\Textures\\btn-research-zerg-predator.dds", 1, 0, 6, 6, 6);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Show Hero Selection Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_ShowHeroSelectionDialog_Func (bool testConds, bool runActions) {
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gf_CreateHeroSelectionDialog(EventPlayer());
-    DialogSetVisible(gv_heroSelectionDialog[EventPlayer()], PlayerGroupSingle(EventPlayer()), true);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ShowHeroSelectionDialog_Init () {
-    gt_ShowHeroSelectionDialog = TriggerCreate("gt_ShowHeroSelectionDialog_Func");
-    TriggerAddEventChatMessage(gt_ShowHeroSelectionDialog, c_playerAny, "Show Hero Selection", false);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hide Hero Selection Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_HideHeroSelectionDialog_Func (bool testConds, bool runActions) {
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogDestroy(gv_heroSelectionDialog[EventPlayer()]);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_HideHeroSelectionDialog_Init () {
-    gt_HideHeroSelectionDialog = TriggerCreate("gt_HideHeroSelectionDialog_Func");
-    TriggerAddEventChatMessage(gt_HideHeroSelectionDialog, c_playerAny, "Hide Hero Selection", false);
+    gf_AddHero("ZoltenTitanofBlades", "Zolten", null, "Assets\\Textures\\btn-unit-protoss-zeratul.dds", 1, 5, 7, 7, 7, 7);
+    gf_AddHero("FeritusTitanofSavagery", "Feritus", null, "Assets\\Textures\\btn-research-zerg-predator.dds", 1, 0, 7, 7, 7, 7);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -311,6 +366,19 @@ bool gt_Init_Func (bool testConds, bool runActions) {
         UnitGroupLoopStep();
     }
     UnitGroupLoopEnd();
+    IntLoopBegin(1, 6);
+    while (!IntLoopDone()) {
+        PlayerGroupAdd(gv_teams[1].lv_playerGroup, IntLoopCurrent());
+        IntLoopStep();
+    }
+    IntLoopEnd();
+    IntLoopBegin(7, 12);
+    while (!IntLoopDone()) {
+        PlayerGroupAdd(gv_teams[2].lv_playerGroup, IntLoopCurrent());
+        IntLoopStep();
+    }
+    IntLoopEnd();
+    gf_CreateandShowHeroSelection();
     return true;
 }
 
@@ -578,8 +646,6 @@ void gt_ApplySpellResistTrainingComplete_Init () {
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
-    gt_ShowHeroSelectionDialog_Init();
-    gt_HideHeroSelectionDialog_Init();
     gt_Init_Init();
     gt_ArmorDiminish_Init();
     gt_ApplyArmorArmorChange_Init();

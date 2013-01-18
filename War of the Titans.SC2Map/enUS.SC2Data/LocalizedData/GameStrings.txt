@@ -98,6 +98,8 @@ MapInfo/Player13/Name=White Team
 MapInfo/Player14/Name=Black Team
 MapInfo/Player15/Name=Hostile
 Param/Value/1BE82936=<s val="Tooltip"><c val="800000">Life</c> - </s>
+Param/Value/498CC936=White Team
+Param/Value/D6BD4F93=Black Team
 Param/Value/FBFE7C6E=<s val="Tooltip"><c val="000080">Mana</c> - </s>
 Quick Strike Learn Button Name=Learn Quick Strike
 Quick Strike Level Button=Improve Quick Strike

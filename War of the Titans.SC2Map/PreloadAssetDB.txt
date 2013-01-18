@@ -345,12 +345,18 @@ id=TitanicClaws
 Actor=ConstructionRefundActorEnemy
 id=TitanicClaws2
 Actor=ConstructionRefundActorEnemy
-Effect=TitanicClaws
+Effect=TitanicClawsPersistent
 id=TitanicEnergyBladeDamage
 Actor=ConstructionRefundActorEnemy
 id=TitanicEnergyBladeSet
 Actor=ConstructionRefundActorEnemy
-Effect=Skirmisher,TitanicEnergyBladeDamage
+Effect=Skirmisher,TitanicEnergyBladePersistent
+id=TitanicEnergyBladePersistent
+Actor=ConstructionRefundActorEnemy
+Effect=TitanicEnergyBladeDamage
+id=TitanicClawsPersistent
+Actor=ConstructionRefundActorEnemy
+Effect=TitanicClaws
 
 [Game]
 id=Dflt

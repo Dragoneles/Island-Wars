@@ -158,16 +158,30 @@
     </CEffectDamage>
     <CEffectSet id="TitanicClaws2">
         <ValidatorArray value="TitanicEnergyBladeSetTargetFilters"/>
-        <EffectArray value="TitanicClaws"/>
+        <EffectArray value="TitanicClawsPersistent"/>
     </CEffectSet>
+    <CEffectCreatePersistent id="TitanicClawsPersistent">
+        <Marker Link="Effect/TitanicEnergyBladeDamage"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <PeriodCount value="100"/>
+        <PeriodicEffectArray value="TitanicClaws"/>
+    </CEffectCreatePersistent>
     <CEffectDamage id="TitanicEnergyBladeDamage" parent="DU_WEAP">
         <Death value="Eviscerate"/>
         <ArmorReduction value="0"/>
         <DisplayFlags index="CollapseBuffed" value="1"/>
     </CEffectDamage>
+    <CEffectCreatePersistent id="TitanicEnergyBladePersistent">
+        <Marker Link="Effect/TitanicEnergyBladeDamage"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <PeriodCount value="100"/>
+        <PeriodicEffectArray value="TitanicEnergyBladeDamage"/>
+    </CEffectCreatePersistent>
     <CEffectSet id="TitanicEnergyBladeSet">
         <ValidatorArray value="TitanicEnergyBladeSetTargetFilters"/>
-        <EffectArray value="TitanicEnergyBladeDamage"/>
+        <EffectArray value="TitanicEnergyBladePersistent"/>
         <EffectArray value="Skirmisher"/>
     </CEffectSet>
 </Catalog>
